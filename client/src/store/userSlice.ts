@@ -36,7 +36,6 @@ const userSlice = createSlice({
     },
     updateUser: (state, action: PayloadAction<User>) => {
       const updatedUser = action.payload;
-      debugger;
       // Mettre à jour dans la liste des utilisateurs
       const userIndex = state.users.findIndex(u => u.email === updatedUser.email);
       if (userIndex !== -1) {
