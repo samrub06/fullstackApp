@@ -26,7 +26,7 @@ export const HomePage: React.FC = () => {
   };
 
   if (error) {
-    return <div className="error">Erreur: {error}</div>;
+    return <div className="error">Error: {error}</div>;
   }
 
   return (

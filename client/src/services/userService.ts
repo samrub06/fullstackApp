@@ -69,14 +69,14 @@ export interface UserResponse {
   };
 }
 
-const API_URL = 'http://localhost:3000/api';
+const API_URL = process.env.REACT_APP_API_URL
 
 export const fetchUsers = async (): Promise<User[]> => {
   try {
     const response = await axios.get<UserResponse>('https://randomuser.me/api/?results=10');
     return response.data.results;
   } catch (error) {
-    console.error('Erreur lors de la récupération des utilisateurs:', error);
+    console.error('Error while fetching users:', error);
     throw error;
   }
 };
@@ -99,7 +99,7 @@ export const getSavedUsers = async (): Promise<User[]> => {
     const response = await axios.get<User[]>(`${API_URL}/users`);
     return response.data.map(user => ({ ...user, isSaved: true }));
   } catch (error) {
-    console.error('Erreur lors de la récupération des utilisateurs sauvegardés:', error);
+    console.error('Error while fetching saved users:', error);
     throw error;
   }
 }; 

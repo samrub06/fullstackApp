@@ -20,7 +20,7 @@ export const SavedUsersPage: React.FC = () => {
                 dispatch(setSavedUsers(users));
                 dispatch(setLoading(false));
             } catch (error) {
-                dispatch(setError('Erreur lors de la récupération des utilisateurs sauvegardés'));
+                dispatch(setError('Error while fetching saved users'));
                 dispatch(setLoading(false));
             }
         };
@@ -33,14 +33,14 @@ export const SavedUsersPage: React.FC = () => {
     };
 
     if (loading) {
-        return <div className="loading">Chargement...</div>;
+        return <div className="loading">Loading...</div>;
     }
 
     if (error) {
         return (
             <div className="error">
                 <p>{error}</p>
-                <button onClick={handleBack}>Retour à l'accueil</button>
+                <button onClick={handleBack}>Back to home</button>
             </div>
         );
     }
@@ -49,15 +49,15 @@ export const SavedUsersPage: React.FC = () => {
         <div className="saved-users-page">
             <div className="page-header">
                 <button className="back-button" onClick={handleBack}>
-                    ← Retour
+                    ← Back to home
                 </button>
-                <h1>Utilisateurs Sauvegardés</h1>
+                <h1>Saved Users</h1>
             </div>
             {savedUsers.length > 0 ? (
                 <UserTable users={savedUsers} />
             ) : (
                 <div className="no-users">
-                    <p>Aucun utilisateur sauvegardé</p>
+                    <p>No saved users</p>
                 </div>
             )}
         </div>

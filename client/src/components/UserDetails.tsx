@@ -87,8 +87,8 @@ export const UserDetails: React.FC<UserDetailsProps> = ({ user, onUpdateUser }) 
             {isError && (
               <div className="save-message error">
                 {error?.message === 'User already exists' 
-                  ? 'Cet utilisateur existe déjà dans la base de données'
-                  : 'Erreur lors de la sauvegarde du profil'}
+                  ? 'This user already exists in the database'
+                  : 'Error while saving profile'}
               </div>
             )}
           </div>
