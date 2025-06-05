@@ -2,6 +2,8 @@
 
 A modern fullstack application built with React, Node.js, and MongoDB.
 
+Available on https://sheltered-atoll-56624-7a2ad24473f8.herokuapp.com/
+
 ## Tech Stack
 
 ### Frontend
